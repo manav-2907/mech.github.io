@@ -1,0 +1,353 @@
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/*#######################HTML styling############*/
+html{
+    font-size: 62.5%;
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background: black;
+}
+::-webkit-scrollbar-thumb {
+    background: plum;
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: paleturquoise;
+}
+
+body{
+    font-family:'Montserrat', sans-serif;
+}
+
+ul li{
+    list-style: none;
+}
+
+a{
+    font-size:1.6rem;
+    text-decoration: none;
+    
+}
+
+p,li{
+    font-size:1.6rem;
+    margin-bottom:0.5em;
+    letter-spacing: 0.15em;
+    
+}
+
+h1,h2,h3{
+    margin-bottom:0.5em;
+    letter-spacing: 0.15em;
+    font-weight:500;
+}
+
+
+/*############### utilty classes ##############*/
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.lg-heading{
+    font-size:3.5rem; 
+}
+
+.md-heading{
+    font-size:2.2rem;
+}
+
+.text-red{
+    color:#e63946;
+}
+
+.text-light{
+    color:#f4f4f4;
+}
+
+.text-black{
+    color:#333333;
+}
+
+.text-gray{
+    color:#555;
+}
+
+.bg-dark{
+    background-color: #263238 ;
+}
+
+.btn{
+    display: inline-block;
+    padding:0.5em 1.5em;
+    font-weight:500;
+    text-transform: uppercase;
+    margin:0.5em 0;
+}
+
+.btn-primary{
+    background-color: #fff;
+    border-radius: 10em;
+
+}
+
+.btn-primary:hover{
+    background-color:#fcf3f2;
+
+}
+.btn-secondary{
+    border: 2px solid #e63946;
+    border-radius: 1.5em;
+    color:#e63946;
+    background: #fff;
+}
+
+.btn-primary:hover{
+    background-color:#fcf3f2
+}
+
+
+
+/*############Header styling#############*/
+.header{
+    height:95vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)), url("bg.jpg");
+    background-position:top;
+    background-size:100%;
+
+    
+}
+.navbar{
+    padding: 1rem;
+    background: rgba( 80, 227, 194, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 8.5px );
+    -webkit-backdrop-filter: blur( 8.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
+    
+
+}
+
+ .navbar .logo{
+    float:left;
+    font-size: 35px;
+}
+ .navbar .navitems{
+    float:right;
+    margin-top:1rem;
+
+}
+.navbar .navitem{
+    display: inline-block;
+    padding:1rem; 
+    text-transform: uppercase;
+}
+
+.navbar a{
+    padding-bottom: 0.3rem;
+
+}
+
+
+
+
+.navbar a:link,
+.navbar a:visited{
+    color:#f4f4f4
+}
+.navbar a:hover{
+    border-bottom: 1px solid #fff;
+}
+
+
+.navbar:after{
+    content:"";
+    display:block;
+    clear: both; 
+
+}
+.header-content{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.header-content h1{
+    text-transform: uppercase;
+    font-weight:700;
+}
+
+.header-content p{
+    text-transform: uppercase;
+}
+
+/*#########SHOW CASE SECTION STYLING ###########*/
+.showcase{
+    background: #ddd;
+    padding: 10rem 0;
+}
+
+.row{
+    height: 350px;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px 0px #aaa;
+}
+
+.row1{
+    margin-bottom:10rem;
+}
+
+.row1 .img-box{
+    float:left;
+    width: 50%;
+
+}
+.row1 .img-box, .row2 .text-box{
+    float:left;
+    width: 50%;
+}
+.row2 .img-box, .row1 .text-box{
+    float:right;
+    width: 50%;
+}
+
+.row1 .text-box{
+    float:right;
+    width: 50%;
+
+}
+
+
+.row .img-box{
+    
+    height: 100%;
+}
+.row .text-box{
+    
+    padding: 3rem;
+}
+
+
+.row .img-box img{
+    display: inline-block;
+    width: 100%;
+    height:100%;
+    
+}
+
+.row:after{
+    content:"";
+    display: block;
+    clear: both;
+    visibility: none;
+}
+
+/*#############Footer Styling ###########*/
+.footer{
+    background:#263238;
+    color: #f4f4f4;
+    padding:2rem;
+    text-align: center;
+    
+}
+.social-media-links i{
+    margin: 1rem;
+}
+
+
+
+
+
+
+
+/*################## MEDIA QUERIES #######################*/
+
+@media (max-width:500px){
+    html{
+        font-size:50%;
+    }
+    p{
+        font-size: 1.8rem;
+    }
+    .navbar .nav-items, .navbar .logo{
+        float: none;
+        display: block;
+        width:100%;
+        text-align: center;
+
+    }
+
+    .row{
+        height: auto;
+        width:100%;
+    }
+
+    .row .img-box,
+    .row .text-box{
+        float:none;
+        width:100%;
+        text-align: center ;
+
+    }
+
+    .features .box{
+        float:none;
+        width:100%;
+        text-align: center;
+
+    }
+    .cta-banner-left,
+    .cta-banner-right{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-wrapper .company-address{
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-bottom: 5rem;
+
+    }
+
+    .form-wrapper .form{
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media(min-width:769px) and (max-width: 1200px){
+    html{
+        font-size: 56.25%;
+
+    }
+    .row .text-box h2{
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
+}
+
+@media(orientation:landscape) and (max-height:500px){
+    .header{
+        height:90vmax;
+
+    }
+}
+
+
+
+
+
+
