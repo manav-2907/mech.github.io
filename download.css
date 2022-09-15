@@ -1,0 +1,140 @@
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: sans-serif;
+	color: #fff;
+	background: #1F1F1F;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Button and the icon */
+section {
+	width: 100%;
+	height: 100vh;
+	display: table;
+}
+
+.center {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.trigger {
+	position: relative;
+	background: #4a1942;
+	display: inline-block;
+	width: 200px;
+	height: 60px;
+	border-radius: 50em;
+	box-shadow: 0 2px 20px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+span, em, i {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	/*background: yellow;
+	opacity: .5;*/
+}
+
+em, i {
+	transition: top 0.3s;
+}
+
+span {
+	/*
+	uncomment this to see where actually the
+	Download and SVG located on initial state
+	and on hover
+	*/
+	overflow: hidden;
+}
+
+em {
+	line-height: 60px; /*make the button text vertically center of the button*/
+	top: 0;
+}
+
+i {
+	top: 100%; /*moving out the SVG to the bottom on page loads*/
+  padding-top:20px;
+}
+
+i::before {
+  content: "\f019";
+  font-family: FontAwesome;
+  font-size: 2rem;
+}
+
+.trigger:hover em {
+	top: -100%; /* move the Download text to the top*/
+}
+
+.trigger:hover i {
+	top: 0;
+}
+
+/*Tooltip**/
+.trigger::before,
+.trigger::after {
+	position: absolute;
+	opacity: 0; /*hide on page load*/
+	visibility: hidden; /*to stop interaction when user hover on top of the button*/
+	transition: all 0.3s;
+}
+
+.trigger::before {
+	content: "File size: 7MB";
+	width: 140px;
+	height: 60px;
+	line-height: 60px; /*to make the text vertically center*/
+	background: #4A1942;
+	border-radius: 0.25em;
+	bottom: 90px;
+	left: calc(50% - 70px); /*take the left size of the box and pull it left by 70px (half of the box's width) referencing .trigger element as the base*/
+}
+
+/*the triangle below the `File size` box*/
+.trigger::after {
+	content: "";
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	/*
+	each border side is 10px width
+	this makes the square 20px width in total
+	left to center = 10px
+	center to right = 10px
+	*/
+	border-top-color: #4A1942;
+	left: calc(50% - 10px); /*take the left size of the box and pull it left by 10px (half of the box's width) referencing .trigger element as the base*/
+	bottom: 70px;
+}
+
+.trigger:hover::before,
+.trigger:hover::after {
+	opacity: 1;
+	visibility: visible;
+}
+
+/*pull down effect for the `File size` box when we hover the button*/
+.trigger:hover::before {
+	bottom: 80px;
+}
+
+.trigger:hover::after {
+	bottom: 60px;
+}
